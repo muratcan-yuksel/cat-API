@@ -24,6 +24,7 @@ fetch('https://api.giphy.com/v1/gifs/translate?api_key=ShwQz1yuFlZwCalQ6bPu2O53j
   const container= document.getElementById("container");
   container.appendChild(button);
 
+//add an event listener and call the changeGIF function
   button.addEventListener("click", changeGIF)
 
 function changeGIF(){
@@ -32,5 +33,26 @@ fetch('https://api.giphy.com/v1/gifs/translate?api_key=ShwQz1yuFlZwCalQ6bPu2O53j
 })
 .then (response=>response.json())
 .then(response2=>img.src=response2.data.images.original.url)
+}
 
+const searchBox= document.getElementById("search");
+
+// console.log(document.getElementById("search").value);
+//get the search butotn
+const searcBtn= document.getElementById("searchBtn");
+//add an event listener
+searcBtn.addEventListener("click", searchGIF)
+
+//write the searchGIF function
+function searchGIF(){
+    //get the search value
+const searchVal= document.getElementById("search").value;
+console.log(searchVal)
+
+fetch('https://api.giphy.com/v1/gifs/translate?api_key=ShwQz1yuFlZwCalQ6bPu2O53jS1GC80E&s=' + searchVal, {
+    mode: 'cors'
+})
+.then (response=>response.json())
+.then(response2=>img.src=response2.data.images.original.url)
+.catch(error=>console.log("Couldn't find that"))
 }

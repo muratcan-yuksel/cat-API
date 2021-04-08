@@ -1,10 +1,28 @@
-body{
+#container{
     display:flex;
     justify-content: center;
-    align-content: center;
-    flex-direction: row;
+    flex-direction: column;
+}
+img{
+    width:300px;
+    height:300px;
+    align-self:center;
+    margin-top:50px;
+}
+#searchDiv{
+    display:flex;
+    justify-content: center;
+}
+#search{
+    width:200px;
+    margin:20px;
+    align-self:center;
+}
+#error{
+    align-self:center
 }
 .button{
-    width:70px;
-    height:70px;
+    width:100px;
+    height:30px;
+    align-self:center;
 }
