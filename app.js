@@ -28,7 +28,8 @@ fetch('https://api.giphy.com/v1/gifs/translate?api_key=ShwQz1yuFlZwCalQ6bPu2O53j
   button.addEventListener("click", changeGIF)
 
 function changeGIF(){
-fetch('https://api.giphy.com/v1/gifs/translate?api_key=ShwQz1yuFlZwCalQ6bPu2O53jS1GC80E&s=cats', {
+
+fetch('https://api.giphy.com/v1/gifs/translate?api_key=ShwQz1yuFlZwCalQ6bPu2O53jS1GC80E&s=cats' , {
     mode: 'cors'
 })
 .then (response=>response.json())
@@ -40,9 +41,11 @@ const searchBox= document.getElementById("search");
 // console.log(document.getElementById("search").value);
 //get the search butotn
 const searcBtn= document.getElementById("searchBtn");
+  
 //add an event listener
 searcBtn.addEventListener("click", searchGIF)
-
+//get the error para
+const errorPara= document.getElementById("error");
 //write the searchGIF function
 function searchGIF(){
     //get the search value
@@ -53,6 +56,9 @@ fetch('https://api.giphy.com/v1/gifs/translate?api_key=ShwQz1yuFlZwCalQ6bPu2O53j
     mode: 'cors'
 })
 .then (response=>response.json())
-.then(response2=>img.src=response2.data.images.original.url)
-.catch(error=>console.log("Couldn't find that"))
+.then(response2=>img.src=response2.data.images.original.url,
+    //erase the error message if it fetches sth
+    errorPara.textContent="")
+    //give error message if the fetch fails
+.catch(error=>errorPara.textContent="Couldn't find that")
 }
