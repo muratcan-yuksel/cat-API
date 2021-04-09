@@ -1,21 +1,16 @@
 // get img element
 const img = document.querySelector("img");
 async function getCats() {
-  fetch(
+  const response = await fetch(
     "https://api.giphy.com/v1/gifs/translate?api_key=ShwQz1yuFlZwCalQ6bPu2O53jS1GC80E&s=dogs",
     {
       mode: "cors",
     }
-  )
-    // get the first object as a promise
-    .then(function (response) {
-      return response.json();
-    })
-    // now dig deeper and get the image
-    .then(function (response) {
-      img.src = response.data.images.original.url;
-    });
+  );
+  const catData = await response.json();
+  img.src = catData.data.images.original.url;
 }
+getCats();
 
 // assignment: Add a button
 const button = document.createElement("button");
