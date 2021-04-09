@@ -1,0 +1,28 @@
+{
+  "name": "cat-API",
+  "version": "1.0.0",
+  "description": "<ul> <li> A basic API app where the user can look for a gif  </li> <li> and change the gif and get a random cat gif </li>",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muratcan-yuksel/cat-API.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/muratcan-yuksel/cat-API/issues"
+  },
+  "homepage": "https://github.com/muratcan-yuksel/cat-API#readme",
+  "devDependencies": {
+    "eslint": "^7.23.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.3.1",
+    "prettier": "^2.2.1"
+  }
+}
