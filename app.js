@@ -24,15 +24,15 @@ container.appendChild(button);
 // add an event listener and call the changeGIF function
 button.addEventListener('click', changeGIF);
 
-function changeGIF() {
-  fetch(
+async function changeGIF() {
+  const response = await fetch(
     'https://api.giphy.com/v1/gifs/translate?api_key=ShwQz1yuFlZwCalQ6bPu2O53jS1GC80E&s=cats',
     {
       mode: 'cors',
     }
-  )
-    .then((response) => response.json())
-    .then((response2) => (img.src = response2.data.images.original.url));
+  );
+  const changeData = await response.json();
+  img.src = changeData.data.images.original.url;
 }
 
 const searchBox = document.getElementById('search');
