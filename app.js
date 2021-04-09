@@ -10,8 +10,6 @@ fetch('https://api.giphy.com/v1/gifs/translate?api_key=ShwQz1yuFlZwCalQ6bPu2O53j
   })
   //now dig deeper and get the image
   .then(function(response) {
-   // console.log(response);
-   console.log(response.data.images.original.url);
    img.src= response.data.images.original.url;
   });
 
